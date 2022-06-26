@@ -22,7 +22,7 @@ class Server:
         self.num_hidden = int(config_dict['num_hidden'])
         self.num_classes = int(config_dict['num_classes'])
         self.learning_rate = float(config_dict['learning_rate'])
-        self.clients = []
+        self.client_list = []
         print("done")
 
     def setup(self):
@@ -46,7 +46,7 @@ class Server:
         c = Client()
         c.input_model(model=self.model, device=self.device, learning_rate=self.learning_rate)
         c.input_data(data_partition=self.data_loader_dict['train'])
-        self.clients.append(c)
+        self.client_list.append(c)
         print("done")
 
     def evaluate_global_model(self):
