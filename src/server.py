@@ -44,6 +44,8 @@ class Server:
         # Create client
         print("\nCreating client...")
         c = Client()
+        c.input_model(model=self.model, device=self.device, learning_rate=self.learning_rate)
+        c.input_data(data_partition=self.data_loader_dict['train'])
         self.clients.append(c)
         print("done")
 
