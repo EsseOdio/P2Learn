@@ -2,7 +2,8 @@ import torch
 
 
 class Client:
-    def __init__(self):
+    def __init__(self, id_client):
+        self.id_client = id_client
         self.model = None
         self.device = None
         self.learning_rate = None
@@ -24,10 +25,9 @@ class Client:
 
         optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate)
         for e in range(1):
-            print("Epoch n°", e)
+            print("Training client", self.id_client)
             for data, labels in self.data_partition:
                 data, labels = data.float().to(self.device), labels.long().to(self.device)
-
                 optimizer.zero_grad()
                 outputs = self.model(data)
 

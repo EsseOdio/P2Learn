@@ -47,10 +47,10 @@ def load_data(data_path, rand_seed, batch_size):
 
     # Define dictionary of loaders
     loaders = {
-        "train": train_loader,
-        "test": test_loader,
-        "train_raw_dataset": train_dataset,
-        "test_raw_dataset": test_dataset,
+        "train_loader": train_loader,
+        "test_loader": test_loader,
+        "train_dataset": train_dataset,
+        "test_dataset": test_dataset,
         "train_idx": train_idx,
         "test_idx": test_idx
     }

@@ -22,4 +22,4 @@ num_clients     100
 # ----------------------------------------
 DEVICE PARAMS
 # ----------------------------------------
-device_type     cuda
+device_type     cpu
